@@ -1,0 +1,13 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: back-front
+  profiles:
+    active:
+      - '@environment@'
+  devtools:
+    add-properties: false
+mybatis:
+  type-aliases-package: cn.gorillahug.front.model
+  mapper-locations: classpath:mapper/*.xml
