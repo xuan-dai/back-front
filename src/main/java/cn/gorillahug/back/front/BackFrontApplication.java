@@ -1,15 +1,17 @@
 package cn.gorillahug.back.front;
 
-import org.mybatis.spring.annotation.MapperScan;
+import cn.gorillahug.base.data.api.model.CustomAutoConfigBean;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
-@MapperScan(basePackages = "cn.gorillahug.front.dao")
 public class BackFrontApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(BackFrontApplication.class, args);
+        ConfigurableApplicationContext ac = SpringApplication.run(BackFrontApplication.class, args);
+        CustomAutoConfigBean bean = ac.getBean(CustomAutoConfigBean.class);
+        System.out.println("bean.getId() = " + bean.getId());
     }
 
 }
