@@ -16,7 +16,7 @@
 
     <properties>
         <base-data-api.version>0.0.1-SNAPSHOT</base-data-api.version>
-        <back-common.version>0.0.1-SNAPSHOT</back-common.version>
+        <fastjson.version>1.2.29</fastjson.version>
     </properties>
 
     <dependencies>
@@ -34,14 +34,6 @@
             <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.mybatis.spring.boot</groupId>
-            <artifactId>mybatis-spring-boot-starter</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
@@ -52,14 +44,22 @@
             <version>${base-data-api.version}</version>
         </dependency>
         <dependency>
-            <groupId>cn.gorillahug</groupId>
-            <artifactId>back-common</artifactId>
-            <version>${back-common.version}</version>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
         </dependency>
     </dependencies>
 

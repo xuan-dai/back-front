@@ -10,8 +10,6 @@ public class BackFrontApplication {
 
     public static void main(String[] args) {
         ConfigurableApplicationContext ac = SpringApplication.run(BackFrontApplication.class, args);
-        CustomAutoConfigBean bean = ac.getBean(CustomAutoConfigBean.class);
-        System.out.println("bean.getId() = " + bean.getId());
     }
 
 }
