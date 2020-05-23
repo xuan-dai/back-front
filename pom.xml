@@ -15,8 +15,10 @@
     <description>A web service code</description>
 
     <properties>
-        <base-data-api.version>0.0.1-SNAPSHOT</base-data-api.version>
+<!--        <base-data-api.version>0.0.1-SNAPSHOT</base-data-api.version>-->
         <fastjson.version>1.2.29</fastjson.version>
+        <shiro-test.version>0.0.1-SNAPSHOT</shiro-test.version>
+        <swagger-test.version>0.0.2-SNAPSHOT</swagger-test.version>
     </properties>
 
     <dependencies>
@@ -38,11 +40,11 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
-        <dependency>
-            <groupId>cn.gorillahug</groupId>
-            <artifactId>base-data-api</artifactId>
-            <version>${base-data-api.version}</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>cn.gorillahug</groupId>-->
+<!--            <artifactId>base-data-api</artifactId>-->
+<!--            <version>${base-data-api.version}</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -60,6 +62,16 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.gorilla</groupId>
+            <artifactId>swagger</artifactId>
+            <version>${swagger-test.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.gorilla</groupId>
+            <artifactId>shiro</artifactId>
+            <version>${shiro-test.version}</version>
         </dependency>
     </dependencies>
 

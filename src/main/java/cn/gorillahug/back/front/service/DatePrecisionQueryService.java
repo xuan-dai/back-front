@@ -7,6 +7,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
+
 /**
  * @author daixuan
  * @version 2019/9/13 16:47
@@ -15,7 +17,7 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class DatePrecisionQueryService {
 
-    @Autowired
+    @Resource
     private PrecisionContext precisionContext;
 
     public void query(DatePrecisionEnum precision) {

@@ -10,15 +10,18 @@
 
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${LOG_HOME}/back-front.log</file>
-        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
-            <fileNamePattern>${LOG_HOME}/back-front.log.%i</fileNamePattern>
-            <minIndex>1</minIndex>
-            <maxIndex>4</maxIndex>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_HOME}/back-front-%d{yyyy-MM-dd}.%i.log.zip</fileNamePattern>
+            <!-- 如果按天来回滚，则最大保存时间为365天，365天之前的都将被清理掉 -->
+            <maxHistory>365</maxHistory>
+            <!-- 日志总保存量为10GB -->
+            <totalSizeCap>10GB</totalSizeCap>
+            <timeBasedFileNamingAndTriggeringPolicy
+                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <!--文件达到 最大${maxFileSize}时会被压缩和切割 -->
+                <maxFileSize>100 MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
         </rollingPolicy>
-
-        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
-            <maxFileSize>100MB</maxFileSize>
-        </triggeringPolicy>
         <encoder>
             <pattern>%d{YYYY-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger[%line] -- %msg%n</pattern>
         </encoder>
