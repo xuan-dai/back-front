@@ -5,6 +5,7 @@ import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.AsyncResult;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 import org.springframework.validation.annotation.Validated;
 
 import javax.validation.Valid;
@@ -22,5 +23,12 @@ public class WebService {
 
     public String sayHello(@Valid @NotBlank String word){
         return Optional.ofNullable(word).orElse("123");
+    }
+
+    public static void main(String[] args) {
+        String string = "string";
+        System.out.println(string.intern());
+        System.out.println(string.startsWith("s"));
+        System.out.println(StringUtils.startsWithIgnoreCase(string, "s"));
     }
 }

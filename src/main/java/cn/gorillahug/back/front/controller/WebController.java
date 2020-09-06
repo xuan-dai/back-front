@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import javax.validation.Valid;
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @RequestMapping("/web")
@@ -23,4 +25,5 @@ public class WebController {
     public String sayHello() {
         return webService.sayHello(null);
     }
+
 }
